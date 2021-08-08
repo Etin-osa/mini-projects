@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #0099F7, #F11712);
+}
+
+.clock {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #06070E;
+  font-family: 'Montserrat', sans-serif;
+  width: 350px;
+  padding: 1.5rem 1rem;
+  color: #fff;
+  box-shadow: 0px 0px 20px -8px rgba(6,7,14,1);
+  text-transform: uppercase;
+}
+
+.clockInner,
+.clockNote {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #ffffff54;
+}
+
+.clockInner span {
+  color: #fff;
+  font-size: 40px;
+}
+
+.clockNote span {
+  font-size: 7px;
+}
+
+.day {
+  margin-left: 15px;
+}
+
+.hour {
+  margin-left: 40px;
+}
+
+.min {
+  margin-left: 35px;
+}
+
+.sec {
+  margin-left: 33px;
+}
+
+
+.btn {
+  position: relative;
+  margin: 4rem 5rem;
+  width: 60px;
+  background: grey;
+  height: 30px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.btn-circle {
+  position: absolute;
+  top: 6%; left: 3%;
+  height: 25.5px;
+  width: 25.5px;
+  background: #fff;
+  border-radius: 100vh;
+  transition: all .5s;
+}

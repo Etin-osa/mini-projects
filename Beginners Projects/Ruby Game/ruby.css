@@ -1,0 +1,201 @@
+@import url(https://fonts.googleapis.com/css?family=Luckiest+Guy);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 10rem;
+  background: radial-gradient(ellipse at center, rgba(240,249,255,1) 0%,rgba(203,235,255,1) 25%,rgba(161,219,255,1) 100%);
+  font-family: "Luckiest Guy", sans-serif;
+}
+
+/* Game Board */
+.gameBoard {
+  max-width: 352px;
+  min-width: 352px;
+  float: left;
+  position: relative;
+}
+
+.gameTile {
+  width: 70px;
+  float: left;
+  margin-top: -34px;
+  position: relative;
+  height: 91px;
+  cursor: pointer;
+  text-align: center;
+  padding: auto;
+  transition: top 200ms ease;
+}
+
+/* Score Board */
+.scoreBoard {
+  width: 143px;
+  position: relative;
+  float: right;
+}
+
+.scoreTile {
+  width: 70px;
+  float: right;
+  height: 91px;
+  margin-top: -34px;
+  cursor: pointer;
+}
+
+
+/* Main Score Board */
+.main-scoreBoard {
+  position: absolute;
+  left: 15%; right: 10%; top: -5%;
+}
+
+.score-section {
+  background: rgba(0, 0, 0, .8);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  text-align: right;
+  padding: .7rem;
+  color: #fff;
+  font-size: 25px;
+}
+
+.score-section div img {
+  height: 32px;
+  transform: translateY(25%);
+}
+
+#scoreInline {
+  color: yellow;
+  margin-bottom: 12px;
+}
+
+.rubyHead {
+  margin-bottom: .5rem;
+}
+
+
+/* Reset Button */
+.reset-section {
+  position: relative;
+  text-align: center;
+  background: url('http://adrianpayne.me/game/assets/images/button.jpg') repeat;
+  margin-top: 2rem;
+  border: 2px solid #fff;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  border-radius: 8px;
+}
+
+.reset-section:hover.reset-section {
+  border: 2px solid #302105c2;
+}
+
+.reset-section button {
+  background: transparent;
+  border: hidden;
+  font-family: "Luckiest Guy", sans-serif;
+  font-size: 18px;
+  cursor: pointer;
+  color: #fff;
+  margin: 0; padding: .2rem 0;
+}
+
+.reset-section button:focus {
+  outline: none;
+  border: none;
+}
+
+/* Floating ruby & Floating star */
+.ruby,
+.star {
+  height: 50px;
+  animation: floating .7s forwards;
+}
+
+
+/* Game Over */
+.cover {
+  position: absolute;
+  height: 110%;
+  width: 100%;
+  margin-top: -30px;
+  background: #000000b6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+
+.cover h1 {
+  color: #fff;
+}
+
+.cover #coverNumb {
+  color: yellow;
+  font-size: 40px;
+}
+
+
+@keyframes floating {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-70%); opacity: 0; pointer-events: none; }
+}
+
+
+/* Backgrounds */
+
+/* Grass */
+.grass{
+  background: url('http://adrianpayne.me/game/assets/images/grass.png') no-repeat; 
+} 
+.grass:hover{
+  top:-10px; 
+}
+
+/* stone */
+.stone {
+  background: url('http://adrianpayne.me/game/assets/images/stone.png') no-repeat;
+}
+
+/* dirt */
+.dirt {
+  background: url('http://adrianpayne.me/game/assets/images/dirt.png') no-repeat;
+}
+
+/* water */
+.water {
+  background: url('http://adrianpayne.me/game/assets/images/water.png') no-repeat;
+}
+
+/* air */
+.air {
+  background: url('http://adrianpayne.me/game/assets/images/air.png') no-repeat;
+}
+
+/* closed chest */
+.closed-chest{
+  background: url('http://adrianpayne.me/game/assets/images/chest-closed.png') no-repeat;
+}
+
+/* open chest */
+.open-chest{
+  background: url('http://adrianpayne.me/game/assets/images/chest-open.png') no-repeat;
+  
+}
+
+/* Chest height */
+.heigt {
+  height: 68px;
+  width: 55px;
+  margin-left: .5rem;
+  transform: translateY(-20%);
+}

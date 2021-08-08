@@ -1,0 +1,409 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// Variables Fonts;
+$font-s: 10px;
+$font-s1: 12px;
+$font-s2: 15px;
+$font-s3: 20px;
+$font-s4: 22px;
+$icon-font1: 24px;
+
+$font-koho: 'KoHo', sans-serif;
+$font-barl: 'Barlow Condensed', sans-serif;
+
+
+// Colors
+$main-color: #EBEBF5;
+$control-color: #8b8b91;
+$inactive-color: #8b8b9188;
+$control-light: #8b8b912c;
+$color-flair: #ED2939;
+$main-dark: #000;
+$white: #FFFFFF;
+$color-shad1: #CCCCD5;
+$color-shad2: #c1c1c9;
+
+
+// Mixin
+@mixin flex($jc, $al) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $al;
+}
+
+@mixin absolute {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin animeAgenda {
+  height: 60px; width: 60px;
+  border-radius: 100vh;
+  background: $main-color;
+}
+
+
+
+body {
+  background: #d6d6d6;
+}
+
+
+.main {
+  @include absolute;
+  background: $main-color;
+  font-weight: 500;
+  border-radius: 7px;
+  box-shadow:  5px 5px 10px #cacad3;  
+
+
+
+  &-inner {
+    text-align: center;
+    font-family: $font-barl;
+    width: 320px;
+    margin: 0 auto;
+    transition: all .2s ease-in;
+  }
+
+  // stop-watch
+  #stop-watch {
+
+    // CLock & Timer
+    .clock {
+      
+      // Clock section
+      &-section {
+        position: relative;
+        height: 250px;
+        margin: 1.5rem 0;
+        @include flex(center, center);
+        transition: all .8s ease-in;
+        
+        // &-Inner 
+        &__inner {
+          @include absolute;
+          height: 235px; width: 235px;
+          border-radius: 100vh;
+          border: 5px solid #ebebeb;
+          box-shadow:  4px 4px 8px $color-shad2,
+             -4px -4px 8px $white ;
+
+
+          // Clock Handles
+          .clock-handles {
+            position: relative;
+            height: 100%;
+
+            // &__numbers
+            &__numbers {
+              div {
+                position: absolute;
+                font-size: $font-s4;
+
+                // 1 & 4
+                &:nth-child(1),
+                &:nth-child(4) {
+                  left: 50%;
+                  transform: translateX(-50%);
+                }
+
+                // 2 & 3
+                &:nth-child(3),
+                &:nth-child(2) {
+                  top: 50%;
+                  transform: translateY(-50%);
+                }
+
+
+                // 1__60
+                &:nth-child(1) {
+                  top: 7%;
+                }
+
+                // 2__15
+                &:nth-child(2) {
+                  right: 7%;
+                }
+
+                // 3__45
+                &:nth-child(3) {
+                  left: 7%;
+                }
+
+                // 4__30
+                &:nth-child(4) {
+                  bottom: 7%;
+                }
+              }
+            }
+
+
+            // Main
+            &__main {
+              div {
+                position: absolute;
+                left: 50%; top: 7%;
+                transform: translateX(-50%);
+              }
+
+              .clock-handles {
+                // &__secs
+                &__secs { 
+                  height: 53%; width: 2px;
+                  border-radius: 1px;
+                  background: linear-gradient($color-flair 48%, $main-color 46%, $main-color 51%, $main-dark 6%) no-repeat 50% 50% / 100% 100%;
+                  transform-origin: 50% 80%;
+                }
+
+                // &__tog
+                &__togg {
+                  @include absolute;
+                  height: 8px; width: 8px;
+                  border: 1px solid $main-dark;
+                  background: $main-color;
+                }
+
+              }
+            } 
+          }
+        }
+      }
+
+      // Timer section
+      .timer-section {
+        margin: .5rem 0 1rem 0;
+        
+        &__inner {
+          width: 135px;
+          margin: 0 auto;
+          padding: .5rem 0;
+          border-radius: 5px;
+          background: $main-color;
+          box-shadow:  5px 5px 10px $color-shad1,
+             -5px -5px 10px $white,
+             inset 5px 5px 10px #e2e2eb,
+            inset -5px -5px 10px #f4f4ff; 
+
+
+          p {
+            font-size: $font-s3;
+          }
+        }
+      }
+    }
+
+    // List 
+    .list {
+      position: relative;
+      font-size: $font-s2;
+      margin-left: .4rem;
+      
+      // &-ul
+      &-ul {
+        text-align: left;
+        height: 165px;
+        list-style: none;
+        overflow-y: scroll;
+
+        // First child li
+        .list-li:first-child {
+          .list-li__inner {
+            border-top: none;
+          }
+        }
+
+        // Add-height
+        &__height {
+          height: 30px;
+        }
+
+        // Scroll bar
+        &::-webkit-scrollbar {
+          width: 4px;
+          background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: $control-light;
+          width: 4px;
+        }
+      }
+
+      // &-li 
+      &-li {
+        &__inner {
+          @include flex(space-between, center);
+          padding: .4rem 0 .6rem 0;
+          margin: 0 1rem;
+          border-top: 1px solid $control-light;
+        }
+
+        // &-Lap
+        &__lap {
+          p:nth-child(1) {
+            font-family: $font-koho;
+          }
+
+          p:nth-child(2) {
+            font-size: $font-s1;
+            line-height: 1.2rem;
+            color: $control-color;
+            
+            span {
+              font-family: $font-koho;
+            }
+          }
+        }
+
+        // &-time
+        &__time {
+          p {
+            font-size: 18px;
+          }
+        }  
+
+        // &-hover 
+        &:hover {
+          box-shadow: 3px 3px 6px $color-shad2;
+        }
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 50px;
+        background: $main-color;           
+        background: linear-gradient(to top, $main-color, #f0f0f800);                 
+      }
+    }
+    
+    // Setter
+    .setter {
+      @include flex(space-evenly, center);
+      padding: 1rem 0;
+
+      // &-Restart
+      &-restart {
+        &__inner {
+          transform: rotateY(180deg);
+        }
+      }
+
+      // &-Play
+      &-play {
+        position: relative;
+
+        &__inner {
+          @include absolute;
+          height: 60px; width: 60px;
+          border-radius: 100vh;
+          line-height: 70px;
+          cursor: pointer;
+          background: $main-color;
+          box-shadow:  7px 7px 14px $color-shad1,
+             -7px -7px 14px #ffffff;
+
+             
+          ion-icon {
+            transform: translateX(2px);
+          }
+
+          // Animation
+          // Before 
+          &-before,
+          &-after {
+            @include absolute;
+            @include animeAgenda;
+          }
+        }
+      }
+
+      // ion-icon
+      ion-icon {
+        font-size: $icon-font1;
+        cursor: pointer;
+      }
+
+      // Restart and Lap color change
+      div:nth-child(1),
+      div:nth-child(3) {
+        div ion-icon {
+          color: $inactive-color;
+          transition: all .3s ease;
+        }
+      }
+    }
+
+  }
+
+  // Controls
+  #controls {
+    @include flex(space-evenly, center);
+    padding: .5rem 0;
+    margin-top: 1.5rem;
+    color: $control-color;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-family: $font-koho;
+
+    //&-Stopwatch
+    .stop-control {
+      &__inner {
+        ion-icon {
+          color: $color-flair;
+        }
+
+        p {
+          color: $color-flair;
+        }
+      }
+    }
+
+    // ion-icon
+    ion-icon { font-size: $icon-font1; }
+
+    // P
+    p { font-size: $font-s; }
+
+    // ion-icon && p
+    ion-icon, p {
+      cursor: pointer;
+    }
+  }
+} 
+
+
+
+// Animation(s)
+@keyframes play {
+  0% {
+    height: 60px; width: 60px;
+    opacity: 1;
+    box-shadow:  7px 7px 14px #c3c3ca,
+             -7px -7px 14px #ffffff,
+             inset 5px 5px 10px #dfdfe9,
+            inset -5px -5px 10px #f7f7ff;
+  }
+              
+  50% {
+    height: 90px; width: 90px;
+    opacity: 1;
+    box-shadow:  7px 7px 14px #c3c3ca,
+             -7px -7px 14px #ffffff,
+             inset 5px 5px 10px #dfdfe9,
+            inset -5px -5px 10px #f7f7ff;
+  }
+                 
+  100% {
+    opacity: 0;
+    height: 110px; width: 110px;
+  }
+}

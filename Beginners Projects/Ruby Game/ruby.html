@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ruby GAME</title>
+
+  <link rel="stylesheet" href="ruby.css">
+</head>
+<body>
+
+  <div class="gameHead">
+    <!-- The Game board -->
+    <div class="gameBoard">
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="gameTile"></div>
+      <div class="cover">
+        <h1>Game Over</h1>
+        <span id="coverNumb"></span>
+      </div>
+    </div>
+    <!-- End of game Board -->
+
+
+  
+    <!-- The score Board -->
+    <div class="scoreBoard">
+      <div class="scoreTile stone"></div>
+      <div class="scoreTile stone"></div>
+      <div class="scoreTile stone"></div>
+      <div class="scoreTile stone"></div>
+      <div class="scoreTile stone"></div>
+      <div class="scoreTile stone"></div>
+      <div class="scoreTile stone"></div>
+      <div class="scoreTile stone"></div>
+      <div class="scoreTile stone"></div>
+      <div class="scoreTile stone"></div>
+      
+      <!-- The Main scoreBoard -->
+      <section class="main-scoreBoard">
+      
+        <!-- The score section -->
+        <div class="score-section">
+          <div class="scoreDiv">score <div id="scoreInline">0</div></div>
+          <div class="rubyHead"><span id="rubyScore">0</span> x <img src="http://adrianpayne.me/game/assets/images/gem.png"/></div>
+          <div class="starHead"><span id="starScore">0</span> x <img src="http://adrianpayne.me/game/assets/images/star.png"/></div>
+        </div>
+        <!-- End of score section -->
+
+        <!-- The reset button section -->
+        <div class="reset-section">
+          <button type="button" id="reset-btn">Reset Board</button>
+        </div>
+        <!-- End reset button section -->
+
+      </section>
+    </div>
+    <!-- End of score Board -->
+  </div>
+
+  <script src="ruby.js"></script>
+</body>
+</html>

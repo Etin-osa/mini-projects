@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nemorphic Stopwatch</title>
+
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=KoHo:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+`<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500&display=swap" rel="stylesheet">
+
+
+  <!-- Icons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule="" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- Css Link -->
+  <link rel="stylesheet" href="dist/css/main.css">
+
+</head>
+<body>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="main-inner">
+
+      <!-- StopWatch -->
+      <section id="stop-watch">
+
+        <!-- Clock & Timer -->
+        <div class="clock">
+
+          <div class="clock-section">
+            <!-- Clock section inner -->
+            <div class="clock-section__inner">
+              <!-- Clock handles -->
+              <div class="clock-handles">
+                <div class="clock-handles__numbers">
+                  <div class="clock-section__p">60</div>
+                  <div class="clock-section__p">15</div>
+                  <div class="clock-section__p">45</div>
+                  <div class="clock-section__p">30</div>
+                </div>
+
+                <div class="clock-handles__main">
+                  <div class="clock-handles__secs"></div>
+                  <div class="clock-handles__togg"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Timer -->
+          <div class="timer-section">
+            <div class="timer-section__inner">
+              <p> <span id="min">00</span>:<span id="secs">00</span>.<span id="centi">00</span> </p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- List -->
+        <div class="list">
+          <ul class="list-ul">
+            <div class="list-ul__height"></div>
+          </ul>
+        </div>
+
+        <!-- Setters -->
+        <div class="setter">
+
+          <div class="setter-restart">
+            <div class="setter-restart__inner">
+              <ion-icon name="refresh"></ion-icon>
+            </div>
+          </div>
+
+          <div class="setter-play">
+            <div class="setter-play__inner-before"></div>
+            <div class="setter-play__inner-after"></div>
+            <div class="setter-play__inner">
+              <ion-icon name="play"></ion-icon>
+            </div>
+          </div>
+
+          <div class="setter-lap">
+            <div class="setter-lap__inner">
+              <ion-icon name="stopwatch-outline"></ion-icon>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- Footer / Controls -->
+      <section id="controls">
+
+        <!-- Alarm -->
+        <div class="alarm-control">
+          <div class="alarm-control__inner">
+            <ion-icon name="alarm-outline"></ion-icon>
+            <p>Alarm</p>
+          </div>
+        </div>
+
+        <!-- World Clock -->
+        <div class="world-control">
+          <div class="world-control__inner">
+            <ion-icon name="time-outline"></ion-icon>
+            <p>World clock</p>
+          </div>
+        </div>
+
+        <!-- StopWatch -->
+        <div class="stop-control">
+          <div class="stop-control__inner">
+            <ion-icon name="stopwatch"></ion-icon>
+            <p>Stopwatch</p>
+          </div>
+        </div>
+
+        <!-- Timer -->
+        <div class="timer-control">
+          <div class="timer-control__inner">
+            <ion-icon name="timer-outline"></ion-icon>
+            <p>Timer</p>
+          </div>
+        </div>
+      </section>
+      
+    </div>
+  </main>
+
+
+  <!-- Audio -->
+  <audio class="audioDemo" src="sound/365716__mc-minnaar__metallic-stopwatch.wav" type="audio/mpeg"></audio>
+
+  <!-- jQuery-->
+  <script src="js/jquery-3.4.1.min.js"></script>
+
+  <!-- Main script -->
+  <script src="js/logic.js"></script>
+</body>
+</html>
